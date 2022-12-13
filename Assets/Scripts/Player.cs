@@ -12,6 +12,8 @@ namespace Katniss
         public bool isInProcessing = false;
         private bool isHoldingCandy = false;
 
+        private int inBoxLayer;
+
         private Ray screenRay;
         private RaycastHit hit;
         private LayerMask planeLayerMask;
@@ -22,13 +24,15 @@ namespace Katniss
         private Rigidbody candyRig;
         private Vector3 candyPos;
 
-        [SerializeField] private GameObject desk;
+        [SerializeField] private GameObject box;
         [SerializeField] private ScrollRect scrollRect;
 
         public event PlayerEventHandler putCandyEvent;
 
         void Start()
         {
+            inBoxLayer = LayerMask.NameToLayer("InBox");
+
             planeLayerMask = 1 << LayerMask.NameToLayer("Plane");
             candyLayerMask = 1 << LayerMask.NameToLayer("Candy");
         }
@@ -63,9 +67,10 @@ namespace Katniss
                 scrollRect.enabled = false;
 
                 hitCandyTransform = hit.transform;
-                candyGameObject = Instantiate(hitCandyTransform.gameObject, desk.transform, true);
+                candyGameObject = Instantiate(hitCandyTransform.gameObject, box.transform, true);
                 candy = candyGameObject.GetComponent<Candy>();
                 candyRig = candyGameObject.GetComponent<Rigidbody>();
+                candyGameObject.layer = inBoxLayer;
                 candyRig.useGravity = true;
                 candyRig.isKinematic = false;
             }
@@ -94,7 +99,6 @@ namespace Katniss
             {
                 if (candy.isInBox)
                 {
-                    candyGameObject.layer = 0;
                     candyPos = candyGameObject.transform.position;
                     if (candyPos.z > 1 || candyPos.z < -1)
                         candyPos.z = candy.posZ;

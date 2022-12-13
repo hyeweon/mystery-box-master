@@ -22,7 +22,7 @@ namespace Katniss {
 
         [SerializeField] private CandyType[] essentialCandyTypes;
 
-        [SerializeField] private Canvas canvasDM;
+        [SerializeField] private Canvas dmCanvas;
         [SerializeField] private TextMeshProUGUI moneyTMP;
 
         public event ShopEventHandler newOrderEvent;
@@ -42,12 +42,18 @@ namespace Katniss {
 
         public void acceptOrder()
         {
+            updateMoney();
+
             newOrderEvent(orders[orderIndex]);
 
             orderIndex++;
             money += orders[orderIndex].amount;
-            canvasDM.enabled = false;
-            updateMoney();
+            dmCanvas.enabled = false;
+        }
+
+        public void finishOrder()
+        {
+            dmCanvas.enabled = true;
         }
 
         void updateMoney()
