@@ -4,18 +4,19 @@ using UnityEngine;
 
 namespace Katniss
 {
-    public class Order
+    [CreateAssetMenu(fileName = "NewOrder", menuName = "Order")]
+    public class Order: ScriptableObject
     {
         public bool isAccept = false;
 
         public int amount;
 
         public CandyType essentialCandyType;
+        public Sprite baseSprite;
+        public Sprite acceptSprite;
 
-        public Order(int _amount, CandyType _essentialCandyType)
-        {
-            amount = _amount;
-            essentialCandyType = _essentialCandyType;
-        }
+        public Sprite[] dmSprites;
+        public Sprite[] goodSprites;
+        public Sprite[] badSprites;
     }
 }

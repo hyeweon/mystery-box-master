@@ -70,9 +70,14 @@ namespace Katniss
                 candyGameObject = Instantiate(hitCandyTransform.gameObject, box.transform, true);
                 candy = candyGameObject.GetComponent<Candy>();
                 candyRig = candyGameObject.GetComponent<Rigidbody>();
+
+                var candyGameObjectScale = candyGameObject.transform.localScale;
+                candyGameObjectScale.x *= 1.5f;
+                candyGameObjectScale.y *= 1.5f;
+                candyGameObjectScale.z *= 1.5f;
+                candyGameObject.transform.localScale = candyGameObjectScale;
+
                 candyGameObject.layer = inBoxLayer;
-                candyRig.useGravity = true;
-                candyRig.isKinematic = false;
             }
             else
             {
@@ -100,9 +105,10 @@ namespace Katniss
                 if (candy.isInBox)
                 {
                     candyPos = candyGameObject.transform.position;
-                    if (candyPos.z > 1 || candyPos.z < -1)
-                        candyPos.z = candy.posZ;
                     candyGameObject.transform.position = candyPos;
+
+                    candyRig.useGravity = true;
+                    candyRig.isKinematic = false;
 
                     putCandyEvent(candy);
                 }

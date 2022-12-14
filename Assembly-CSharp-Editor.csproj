@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{3BAC5F8A-8D4A-E1B4-F6E3-F0D70A4BD27A}</ProjectGuid>
+    <ProjectGuid>{92448A35-AC44-DA74-7F12-9051EB2E4E27}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp-Editor</AssemblyName>
@@ -56,10 +56,10 @@
     <Analyzer Include="/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/MonoDevelop.Unity/Analyzers/Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets/Arthor/FX_02/JMO Assets/Cartoon FX Easy Editor/Editor/CFXEasyEditor.cs" />
+    <Compile Include="Assets/FX_02/JMO Assets/Cartoon FX Easy Editor/Editor/CFXEasyEditor.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets/Arthor/FX_02/JMO Assets/Editor/JMOAssets_CartoonFXFreeWelcome.dll" />
+    <None Include="Assets/FX_02/JMO Assets/Editor/JMOAssets_CartoonFXFreeWelcome.dll" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -354,7 +354,7 @@
       <HintPath>Library/PackageCache/com.unity.nuget.newtonsoft-json@3.0.2/Runtime/Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="JMOAssets_CartoonFXFreeWelcome">
-      <HintPath>Assets/Arthor/FX_02/JMO Assets/Editor/JMOAssets_CartoonFXFreeWelcome.dll</HintPath>
+      <HintPath>Assets/FX_02/JMO Assets/Editor/JMOAssets_CartoonFXFreeWelcome.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
       <HintPath>Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom/nunit.framework.dll</HintPath>
@@ -824,30 +824,39 @@
     <Reference Include="Unity.VisualScripting.State">
       <HintPath>Library/ScriptAssemblies/Unity.VisualScripting.State.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Recorder.Editor">
+      <HintPath>Library/ScriptAssemblies/Unity.Recorder.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Recorder">
+      <HintPath>Library/ScriptAssemblies/Unity.Recorder.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Recorder.Base">
+      <HintPath>Library/ScriptAssemblies/Unity.Recorder.Base.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp.csproj">
-      <Project>{3D5AC9F5-10D5-97EE-2076-99C54262C9E8}</Project>
+      <Project>{DFA6257F-CBF7-5BF3-9FAA-4A84FB9499AA}</Project>
       <Name>Assembly-CSharp</Name>
     </ProjectReference>
     <ProjectReference Include="ToonyColorsPro.Demo.Editor.csproj">
-      <Project>{2F5DF024-F848-9582-C7B1-4AA1DB3DA07E}</Project>
+      <Project>{1A608416-AA8F-D1C4-EA48-F88DFA88E685}</Project>
       <Name>ToonyColorsPro.Demo.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="KinoBloom.Runtime.csproj">
-      <Project>{31BE75A6-CFD8-E8A6-9E55-0EDF1B5436CD}</Project>
+      <Project>{6A8B00F6-310B-62BF-28EC-5631A91C1EC2}</Project>
       <Name>KinoBloom.Runtime</Name>
     </ProjectReference>
     <ProjectReference Include="ToonyColorsPro.Runtime.csproj">
-      <Project>{4926F314-F73F-303C-0AA4-E5C1D8A6CC57}</Project>
+      <Project>{432C7451-AB56-052D-89E1-9C2AB5C01BCF}</Project>
       <Name>ToonyColorsPro.Runtime</Name>
     </ProjectReference>
     <ProjectReference Include="ToonyColorsPro.Editor.csproj">
-      <Project>{D86CA2EF-5983-8C35-A1C2-957162D6049F}</Project>
+      <Project>{E7518742-9A1C-91D5-1220-2AC26A1DE7AD}</Project>
       <Name>ToonyColorsPro.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="ToonyColorsPro2.Demo.csproj">
-      <Project>{EFAB4926-FB90-CDFB-D402-093ED4071E99}</Project>
+      <Project>{BCC7C6A7-558E-5DC5-DCDC-52BF5A767CA4}</Project>
       <Name>ToonyColorsPro2.Demo</Name>
     </ProjectReference>
   </ItemGroup>

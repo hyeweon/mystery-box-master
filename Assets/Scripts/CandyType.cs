@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Katniss
 {
-    [CreateAssetMenu(fileName = "New Candy Type", menuName = "Candy Type")]
+    [CreateAssetMenu(fileName = "NewCandyType", menuName = "Candy Type")]
     public class CandyType : ScriptableObject
     {
         public int type;

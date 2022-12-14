@@ -9,7 +9,6 @@ namespace Katniss
         public bool isInBox = false;
 
         private int boxLayer;
-        public float posZ;
 
         public CandyType type;
 
@@ -23,7 +22,6 @@ namespace Katniss
             if (other.gameObject.layer == boxLayer)
             {
                 isInBox = true;
-                posZ = other.transform.position.z;
             }
         }
 

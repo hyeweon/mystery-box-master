@@ -15,15 +15,15 @@ namespace Katniss {
         private int money = 0;
         private int orderIndex;
 
-        [SerializeField] private int orderCount = 3;
-        [SerializeField] private int[] amounts;
-
-        private Order[] orders;
-
-        [SerializeField] private CandyType[] essentialCandyTypes;
-
+        [SerializeField] private Button acceptBtn;
+        [SerializeField] private GameObject declineBtn;
+        [SerializeField] private GameObject premiumBtn;
+        [SerializeField] private GameObject normalBtn;
         [SerializeField] private Canvas dmCanvas;
+        [SerializeField] private Image bgImage;
         [SerializeField] private TextMeshProUGUI moneyTMP;
+
+        [SerializeField] private Order[] orders;
 
         public event ShopEventHandler newOrderEvent;
 
@@ -31,34 +31,81 @@ namespace Katniss {
         {
             orderIndex = 0;
 
-            orders = new Order[orderCount];
-            for(int i = 0; i < orderCount; i++)
-            {
-                orders[i] = new Order(amounts[i], essentialCandyTypes[i]);
-            }
-
+            acceptBtn.gameObject.SetActive(false);
+            declineBtn.SetActive(false);
+            premiumBtn.SetActive(false);
+            normalBtn.SetActive(false);
+            bgImage.sprite = orders[orderIndex].baseSprite;
             updateMoney();
+
+            StartCoroutine(showOrder());
         }
 
         public void acceptOrder()
         {
+            acceptBtn.enabled = false;
+
+            money += orders[orderIndex].amount;
             updateMoney();
 
-            newOrderEvent(orders[orderIndex]);
-
-            orderIndex++;
-            money += orders[orderIndex].amount;
-            dmCanvas.enabled = false;
+            StartCoroutine(startOrder());
         }
 
         public void finishOrder()
         {
             dmCanvas.enabled = true;
+            StartCoroutine(showReaction());
         }
 
         void updateMoney()
         {
             moneyTMP.text = $"{money}";
+        }
+
+        IEnumerator showOrder()
+        {
+            foreach (Sprite sprite in orders[orderIndex].dmSprites)
+            {
+                yield return new WaitForSeconds(1f);
+                bgImage.sprite = sprite;
+            }
+
+            yield return new WaitForSeconds(0.5f);
+
+            acceptBtn.gameObject.SetActive(true);
+            declineBtn.SetActive(true);
+        }
+
+        IEnumerator startOrder()
+        {
+            bgImage.sprite = orders[orderIndex].acceptSprite;
+            yield return new WaitForSeconds(1f);
+
+            newOrderEvent(orders[orderIndex]);
+            dmCanvas.enabled = false;
+            acceptBtn.gameObject.SetActive(false);
+
+            yield return new WaitForSeconds(1f);
+
+            declineBtn.SetActive(false);
+        }
+
+        IEnumerator showReaction()
+        {
+            if (goodReaction)
+            {
+                foreach (Sprite sprite in orders[orderIndex].goodSprites)
+                {
+                    bgImage.sprite = sprite;
+                    yield return new WaitForSeconds(0.5f);
+                }
+            }
+
+            premiumBtn.SetActive(true);
+
+            yield return new WaitForSeconds(3f);
+
+            normalBtn.SetActive(true);
         }
     }
 }
