@@ -56,25 +56,26 @@
     <Analyzer Include="/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/MonoDevelop.Unity/Analyzers/Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets/FX_02/JMO Assets/Cartoon FX/Scripts/CFX_LightIntensityFade.cs" />
     <Compile Include="Assets/Scripts/Shop.cs" />
+    <Compile Include="Assets/FX_02/JMO Assets/Cartoon FX/Scripts/CFX_AutoRotate.cs" />
+    <Compile Include="Assets/Scripts/PrefsReset.cs" />
+    <Compile Include="Assets/FX_02/JMO Assets/Cartoon FX/Demo/Assets/CFX_AutoStopLoopedEffect.cs" />
+    <Compile Include="Assets/FX_02/JMO Assets/Cartoon FX/Demo/Assets/CFX_Demo_RandomDir.cs" />
+    <Compile Include="Assets/FX_02/JMO Assets/Cartoon FX/Scripts/CFX_AutoDestructShuriken.cs" />
     <Compile Include="Assets/Scripts/CandyType.cs" />
-    <Compile Include="Assets/Scripts/OrderManager.cs" />
-    <Compile Include="Assets/Scripts/Candy.cs" />
-    <Compile Include="Assets/Scripts/Player.cs" />
-    <Compile Include="Assets/Scripts/Order.cs" />
     <Compile Include="Assets/FX_01/FXIFIED/common/Scripts/PlayerController.cs" />
+    <Compile Include="Assets/Scripts/OrderManager.cs" />
+    <Compile Include="Assets/FX_02/JMO Assets/Cartoon FX/Demo/Assets/CFX_Demo_RotateCamera.cs" />
+    <Compile Include="Assets/Scripts/Candy.cs" />
     <Compile Include="Assets/FX_01/FXIFIED/common/Scripts/Quit.cs" />
+    <Compile Include="Assets/FX_02/JMO Assets/Cartoon FX/Demo/Assets/CFX_Demo_RandomDirectionTranslate.cs" />
+    <Compile Include="Assets/Scripts/Player.cs" />
     <Compile Include="Assets/FX_01/FXIFIED/common/Scripts/PowerUp.cs" />
     <Compile Include="Assets/FX_02/JMO Assets/Cartoon FX/Demo/Assets/CFX_Demo_Translate.cs" />
-    <Compile Include="Assets/FX_02/JMO Assets/Cartoon FX/Scripts/CFX_AutoRotate.cs" />
     <Compile Include="Assets/FX_02/JMO Assets/Cartoon FX/Demo/Assets/CFX_Demo_New.cs" />
-    <Compile Include="Assets/FX_02/JMO Assets/Cartoon FX/Demo/Assets/CFX_Demo_RandomDirectionTranslate.cs" />
-    <Compile Include="Assets/FX_02/JMO Assets/Cartoon FX/Demo/Assets/CFX_AutoStopLoopedEffect.cs" />
-    <Compile Include="Assets/FX_02/JMO Assets/Cartoon FX/Demo/Assets/CFX_Demo_RotateCamera.cs" />
-    <Compile Include="Assets/FX_02/JMO Assets/Cartoon FX/Demo/Assets/CFX_Demo_RandomDir.cs" />
     <Compile Include="Assets/FX_02/JMO Assets/Cartoon FX/Scripts/CFX_LightFlicker.cs" />
-    <Compile Include="Assets/FX_02/JMO Assets/Cartoon FX/Scripts/CFX_AutoDestructShuriken.cs" />
-    <Compile Include="Assets/FX_02/JMO Assets/Cartoon FX/Scripts/CFX_LightIntensityFade.cs" />
+    <Compile Include="Assets/Scripts/Order.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />
@@ -177,6 +178,7 @@
     <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF Overlay.shader" />
     <None Include="Assets/Toony Colors Pro 2/JMO Assets/Toony Colors Pro/Shader Templates 2/Modules/Module_Rim Lighting.txt" />
     <None Include="Assets/TextMesh Pro/Shaders/TMP_Bitmap-Mobile.shader" />
+    <None Include="Assets/Minimalist Christmas/readme.txt" />
     <None Include="Assets/Toony Colors Pro 2/JMO Assets/Toony Colors Pro/Shader Templates 2/Modules/Module_Subsurface Scattering.txt" />
     <None Include="Assets/TextMesh Pro/Fonts/LiberationSans - OFL.txt" />
     <None Include="Assets/Toony Colors Pro 2/JMO Assets/Toony Colors Pro/Shader Templates 2/Modules/Module_NoTile Sampling.txt" />
@@ -815,8 +817,14 @@
     <Reference Include="Unity.VisualScripting.Flow.Editor">
       <HintPath>Library/ScriptAssemblies/Unity.VisualScripting.Flow.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Recorder.Editor">
+      <HintPath>Library/ScriptAssemblies/Unity.Recorder.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.VSCode.Editor">
       <HintPath>Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Recorder.Base">
+      <HintPath>Library/ScriptAssemblies/Unity.Recorder.Base.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
@@ -890,17 +898,15 @@
     <Reference Include="Unity.VisualScripting.State">
       <HintPath>Library/ScriptAssemblies/Unity.VisualScripting.State.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Recorder.Editor">
-      <HintPath>Library/ScriptAssemblies/Unity.Recorder.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.Recorder">
       <HintPath>Library/ScriptAssemblies/Unity.Recorder.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Recorder.Base">
-      <HintPath>Library/ScriptAssemblies/Unity.Recorder.Base.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="ToonyColorsPro2.Demo.csproj">
+      <Project>{BCC7C6A7-558E-5DC5-DCDC-52BF5A767CA4}</Project>
+      <Name>ToonyColorsPro2.Demo</Name>
+    </ProjectReference>
     <ProjectReference Include="ToonyColorsPro.Demo.Editor.csproj">
       <Project>{1A608416-AA8F-D1C4-EA48-F88DFA88E685}</Project>
       <Name>ToonyColorsPro.Demo.Editor</Name>
@@ -916,10 +922,6 @@
     <ProjectReference Include="ToonyColorsPro.Editor.csproj">
       <Project>{E7518742-9A1C-91D5-1220-2AC26A1DE7AD}</Project>
       <Name>ToonyColorsPro.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="ToonyColorsPro2.Demo.csproj">
-      <Project>{BCC7C6A7-558E-5DC5-DCDC-52BF5A767CA4}</Project>
-      <Name>ToonyColorsPro2.Demo</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

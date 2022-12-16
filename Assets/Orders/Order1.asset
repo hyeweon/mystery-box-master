@@ -13,6 +13,15 @@ MonoBehaviour:
   m_Name: Order1
   m_EditorClassIdentifier: 
   isAccept: 0
-  amount: 0
-  essentialCandyType: {fileID: 0}
-  dmSprites: []
+  isSecret: 0
+  amount: 15
+  essentialCandyType: {fileID: 11400000, guid: 974a2e3ff536f41f78c1dfa4b356339b, type: 2}
+  baseSprite: {fileID: 21300000, guid: 8798d8f83278144b8a21cb1fed9b82be, type: 3}
+  acceptSprite: {fileID: 21300000, guid: e36fe48c6107d432182333685a010847, type: 3}
+  dmSprites:
+  - {fileID: 21300000, guid: 80083b06e086a4a22b2d85ad22018950, type: 3}
+  - {fileID: 21300000, guid: 24e5433b0ea3348bf9999b21ba849f39, type: 3}
+  goodSprites:
+  - {fileID: 21300000, guid: c2106c09306694a75901acdc57fb7d8a, type: 3}
+  - {fileID: 21300000, guid: dcbcd9a848564487eb7544ca9fce5558, type: 3}
+  badSprites: []

@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0891816ce6b044cab348e4d92aa98fc, type: 3}
   m_Name: Crayon
   m_EditorClassIdentifier: 
-  type: 0
+  isActive: 0
+  type: 4
   price: 3

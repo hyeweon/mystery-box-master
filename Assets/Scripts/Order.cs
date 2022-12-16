@@ -8,6 +8,7 @@ namespace Katniss
     public class Order: ScriptableObject
     {
         public bool isAccept = false;
+        public bool isSecret;
 
         public int amount;
 

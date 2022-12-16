@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0891816ce6b044cab348e4d92aa98fc, type: 3}
   m_Name: Ruler
   m_EditorClassIdentifier: 
-  type: 4
+  isActive: 1
+  type: 2
   price: 4

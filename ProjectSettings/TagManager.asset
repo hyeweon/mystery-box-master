@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Shop
   layers:
   - Default
   - TransparentFX
@@ -19,9 +20,9 @@ TagManager:
   - Plane
   - Desk
   - 
+  - Buffer
   - 
-  - 
-  - 
+  - Particle
   - 
   - 
   - 
