@@ -220,6 +220,7 @@ namespace Katniss
             }
         }
 
+        // state machine으로 처리 
         IEnumerator hightlightBox()
         {
             yield return new WaitUntil(() => (boxAnimator.GetCurrentAnimatorStateInfo(0).IsName("Closing")));

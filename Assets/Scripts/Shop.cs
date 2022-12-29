@@ -122,6 +122,7 @@ namespace Katniss {
         {
             bgImage.sprite = orders[orderIndex].acceptSprite;
             source.Play();
+            // 타이밍이 어긋날 수 있음
             yield return new WaitForSeconds(1.5f);
 
             newOrderEvent(orders[orderIndex]);
@@ -180,6 +181,7 @@ namespace Katniss {
                 yield return null;
             }
 
+            // Loading 하면에서만 디스트로이
             Destroy(coin);
             updateMoney();
         }
